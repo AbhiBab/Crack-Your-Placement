@@ -22,39 +22,39 @@ Since the array is sorted, all duplicates will be adjacent. We can use a two-poi
    - Compare `nums[j]` with `nums[i]`. If they are different, increment `i` and update `nums[i]` with `nums[j]`.
 
 3. **Return the Result:**
-   - After iterating through the array, `i + 1` will be the number of unique elements.
+   - After iterating through the array, return `i + 1` which will be the number of unique elements.
 
 ## Code
 
-```python
-class Solution:
-    def removeDuplicates(self, nums: List[int]) -> int:
-        if not nums:
-            return 0
-
-        i = 0  # Pointer for the position of the last unique element
-
-        for j in range(1, len(nums)):
-            if nums[j] != nums[i]:
-                i += 1
-                nums[i] = nums[j]
-
-        return i + 1  # Number of unique elements
+```C++
+class Solution {
+public:
+    int removeDuplicates(vector<int>& nums) {
+        int n=nums.size(),i=0,j=1;
+        while(j<n){
+            if(nums[i]!=nums[j]){
+                i++;
+                swap(nums[i],nums[j]);
+               
+            }
+            j++;
+        }
+        return i+1;
+    }
+};
 ```
 
 ## Complexity
 
-- **Time Complexity:** O(n)  
-  We iterate through the array once, where `n` is the length of the array.
+- **Time Complexity:** O(N)  
+  We iterate through the array once, where `N` is the length of the array.
 
 - **Space Complexity:** O(1)  
   We use constant extra space as we modify the array in place.
 
 ---
 
-***Follow my progress and join the challenge on my*** **[GitHub](https://github.com/nandini-gangrade/DSA-Sheet), [Leetcode](https://leetcode.com/problems/remove-duplicates-from-sorted-array/solutions/5524617/best-solution-challenge-day-1-revisewitharsh) *and* [LinkedIn](https://www.linkedin.com/feed/update/urn:li:activity:7221580562367414272/)** 
-
-![image.png](https://assets.leetcode.com/users/images/dd42a649-e1d9-4b22-9eb8-add015c24468_1721761764.4795635.png)
+***Follow my progress and join the challenge on my*** **[GitHub](https://github.com/AbhiBab/Crack-Your-Placement), [Leetcode](https://leetcode.com/problems/remove-duplicates-from-sorted-array/solutions/5549940/best-easy-solution/) *and* [LinkedIn](https://www.linkedin.com/in/abhishek1981agarwal/)** 
 
 `Let's tackle these coding challenges together! 🚀
 `
